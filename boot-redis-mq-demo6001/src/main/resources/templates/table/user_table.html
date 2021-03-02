@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<h1>
+    你好啊啊啊啊啊啊啊a
+</h1>
+<table  id="user-table" th:border="1" th:cellspacing="0">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>name</th>
+        <th>age</th>
+        <th>email</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user:${users}">
+        <td th:text="${user.id}"></td>
+        <td>[[${user.name}]]</td>
+        <td th:text="${user.age}"></td>
+        <td th:text="${user.email}"></td>
+        <td>
+            <a th:href="@{/user/deleteuser/{id}(id=${user.id})}"  type="button">删除</a>
+        </td>
+    </tr>
+
+    </tfoot>
+
+</table>
+
+</body>
+</html>
