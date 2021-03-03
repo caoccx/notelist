@@ -1,7 +1,8 @@
 package com.itcc.boot.mapper;
 
-import com.itcc.boot.bean.User;
+import com.itcc.boot.entities.User;
 import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -18,5 +19,7 @@ public interface UserMapper {
 
     @Delete("delete from user where id =#{id}")
     void removeById(Long id);
+
+    int createUser(User user);
 
 }

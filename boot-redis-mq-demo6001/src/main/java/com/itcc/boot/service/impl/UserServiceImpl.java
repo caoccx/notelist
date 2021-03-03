@@ -1,11 +1,11 @@
 package com.itcc.boot.service.impl;
 
-import com.itcc.boot.bean.User;
+import com.itcc.boot.entities.User;
 import com.itcc.boot.mapper.UserMapper;
 import com.itcc.boot.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -14,7 +14,7 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
+    @Resource
     UserMapper userMapper;
 
     @Override
@@ -25,5 +25,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public void removeById(Long id) {
          userMapper.removeById(id);
+    }
+
+    @Override
+    public int createUser(User user) {
+        return userMapper.createUser(user);
     }
 }
