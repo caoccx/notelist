@@ -21,7 +21,17 @@ spring:
       max-lifetime: 1800000
       connection-timeout: 30000
       connection-test-query: SELECT 1
-
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+    timeout: 10000ms
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: 10000ms
+        max-idle: 200
+        min-idle: 5
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml

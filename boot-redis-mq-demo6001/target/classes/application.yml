@@ -2,6 +2,8 @@ server:
   port: 6001
 
 spring:
+  thymeleaf:
+    cache: false #缓存关掉
   application:
     name: cloud-payment-service
   datasource:
@@ -10,7 +12,32 @@ spring:
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource #当前数据源操作类型
+    hikari:
+      pool-name: DateHikariCP
+      minimum-idle: 5
+      idle-timeout: 1800000
+      maximum-pool-size: 10
+      auto-commit: true
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+    timeout: 10000ms
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: 10000ms
+        max-idle: 200
+        min-idle: 5
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.itcc.boot.entities #所有entity别名类所在包
+
+#mybatis SQL 打印机制
+logging:
+  level:
+    com.itcc.boot.mapper: debug
