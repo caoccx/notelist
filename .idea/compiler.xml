@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="boot-redis-mq-demo6001" />
+        <module name="boot_test_demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="boot-redis-mq-demo6001" target="1.8" />
+      <module name="boot_test_demo" target="1.8" />
       <module name="notelist" target="1.8" />
     </bytecodeTargetLevel>
   </component>

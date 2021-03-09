@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>boot-redis-mq-demo6001</module>
+        <module>boot_test_demo</module>
     </modules>
 
 
